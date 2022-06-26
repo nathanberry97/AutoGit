@@ -16,8 +16,19 @@ auto_help() {
   echo -e "Usage: ag [argument] string\n"
   echo "Arguments:"
   echo "  -c        add and commit changes"
+  echo "  -s        squash commits"
   echo "  -h        help menu"
   exit 0
+}
+
+invalid_option() {
+  echo "Invalid option: -$OPTARG"
+  exit 1
+}
+
+argement_needed() {
+  echo "Option -$OPTARG requires an argument."
+  exit 1
 }
 
 while getopts ":c:s:h?" opt; do
@@ -25,16 +36,12 @@ while getopts ":c:s:h?" opt; do
     c)
       git_commit;;
     s)
-      git_squash ;;
+      git_squash;;
     h)
-      auto_help ;;
+      auto_help;;
     \?)
-      echo "Invalid option: -$OPTARG"
-      exit 1
-      ;;
+      invalid_option;;
     :)
-      echo "Option -$OPTARG requires an argument."
-      exit 1
-      ;;
+      argement_needed;;
   esac
 done
