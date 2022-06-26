@@ -5,7 +5,7 @@ while getopts ":c:" opt; do
     c)
       echo "-c was triggered, Parameter: $OPTARG"
       git add -A
-      git commit -m "$OPTARG"
+      git commit -m "'$OPTARG'"
       ;;
     \?)
       echo "Invalid option: -$OPTARG"
