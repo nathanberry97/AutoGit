@@ -25,4 +25,4 @@ At present the program can do the following:
 
 ## priview
 
-![image](images/AutoGit.png)
+![image](images/autoGit.png)
