@@ -23,6 +23,6 @@ At present the program can do the following:
 | ag -h          | help menu                              |
 
 
-## priview
+## preview
 
 ![image](images/autoGit.png)
