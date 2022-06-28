@@ -30,7 +30,8 @@ git_squash() {
 auto_help() {
   echo -e "AutoGit - git made easy\n"
   echo -e "Usage: ag [argument] string"
-  echo -e "   or: ag [argument]\n"
+  echo -e "   or: ag [argument]"
+  echo -e "   or: ag [no flag runs git status]\n"
   echo "Arguments:"
   echo "  -r        create new repo and push to github"
   echo "  -c        add and commit changes"
@@ -68,3 +69,5 @@ while getopts ":r:c:b:s:h?" opt; do
       argument_needed;;
   esac
 done
+
+git status
